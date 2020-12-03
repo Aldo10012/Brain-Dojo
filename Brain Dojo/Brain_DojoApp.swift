@@ -11,7 +11,7 @@ import SwiftUI
 struct final_projectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(topColor: "black", bottomColor: "red",randomUIColor: .green)
+            Home()
         }
     }
 }

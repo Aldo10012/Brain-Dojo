@@ -1,21 +1,25 @@
 //
-//  ContentView.swift
-//  Brain Dojo
+//  Medium.swift
+//  Brain-Dojo
 //
-//  Created by Alberto Dominguez on 11/20/20.
+//  Created by Alberto Dominguez on 12/2/20.
 //
 
 import SwiftUI
 
 
-struct ContentView: View {
+struct Medium: View {
 
     @State var topColor: String
     @State var bottomColor: String
     @State var randomUIColor: Color
+    @State var cardColor: Color
     @State var score: Int = 0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var seconds: Int = 30
+    
+    @State var blackOrWhite: Color = Color.black
+
     
     var body: some View {
         
@@ -27,19 +31,20 @@ struct ContentView: View {
             VStack( alignment: .center, spacing: 20){
                 // display time, score, & streek
                 HStack(spacing: 15){
-                    Button(action: {
-                        reset()
-                    }, label: {
-                        Text("reset")
-                            .fontWeight(.heavy)
-                    })
+//                    Button(action: {
+//                        reset()
+//                    }, label: {
+//                        Text("reset")
+//                            .fontWeight(.heavy)
+//                            .font(.system(size: 20.0))
+//                    })
                     
                     Text("Time: \(seconds)").onReceive(timer) {input in
                         self.seconds -= 1
                         if seconds < 0 {seconds = 0}
-                    }
+                    }.font(.system(size: 20.0))
                     
-                    Text("Score: \(score)")
+                    Text("Score: \(score)").font(.system(size: 20.0))
                     
                 }
                 
@@ -58,7 +63,10 @@ struct ContentView: View {
                         .tracking(5)
                         .frame(width: 300, height: 100, alignment: .center)
                         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 1)
-                        .background(Color.white.opacity(0.85))
+                        .background(cardColor.opacity(0.85))
+                        .foregroundColor(blackOrWhite)
+                        
+                        
                         
                     Text(bottomColor)
                         .font(.system(size: 45.0))
@@ -66,7 +74,7 @@ struct ContentView: View {
                         .fontWeight(.heavy)
                         .frame(width: 300, height: 100, alignment: .center)
                         .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                        .background(Color.white.opacity(0.85))
+                        .background(cardColor.opacity(0.85))
                         .foregroundColor(randomUIColor)
                 }
                 Spacer()
@@ -98,6 +106,7 @@ struct ContentView: View {
                 }.padding(.bottom, 0)
             }
         }
+        
     }
     
     
@@ -120,52 +129,109 @@ struct ContentView: View {
         let randomIndex: Int = Int.random(in: 0...listOfUIColors.count-1)
         randomUIColor = listOfUIColors [randomIndex]
     }
+    
+    func getRandomCardColor(){
+        let listOfCardColors: [Color] = [.white, .white, .black]
+        let randomIndex: Int = Int.random(in: 0...listOfCardColors.count-1)
+        cardColor = listOfCardColors [randomIndex]
+        
+        if cardColor == Color.white{
+            blackOrWhite = Color.black
+        }else{
+            blackOrWhite = Color.white
+        }
+    }
 
+    
     
     
     // actions for clicking the buttons
     func noWasClicked(){
-        if topColor == "Blue" && randomUIColor == Color.blue{
-            score = 0
-        } else if topColor == "Green" && randomUIColor == Color.green{
-            score = 0
-        } else if topColor == "Yellow" && randomUIColor == Color.yellow{
-            score = 0
-        } else if topColor == "Orange" && randomUIColor == Color.orange{
-            score = 0
-        } else if topColor == "Red" && randomUIColor == Color.red{
-            score = 0
-        } else if topColor == "Purple" && randomUIColor == Color.purple{
-            score = 0
-        }else{
-            score += 10
+        if cardColor == Color.white{
+            if topColor == "Blue" && randomUIColor == Color.blue{
+                score = 0
+            } else if topColor == "Green" && randomUIColor == Color.green{
+                score = 0
+            } else if topColor == "Yellow" && randomUIColor == Color.yellow{
+                score = 0
+            } else if topColor == "Orange" && randomUIColor == Color.orange{
+                score = 0
+            } else if topColor == "Red" && randomUIColor == Color.red{
+                score = 0
+            } else if topColor == "Purple" && randomUIColor == Color.purple{
+                score = 0
+            }else{
+                score += 10
+            }
         }
+        
+        if cardColor == Color.black{
+            if topColor == "Blue" && randomUIColor == Color.blue{
+                score += 10
+            } else if topColor == "Green" && randomUIColor == Color.green{
+                score += 10
+            } else if topColor == "Yellow" && randomUIColor == Color.yellow{
+                score += 10
+            } else if topColor == "Orange" && randomUIColor == Color.orange{
+                score += 10
+            } else if topColor == "Red" && randomUIColor == Color.red{
+                score += 10
+            } else if topColor == "Purple" && randomUIColor == Color.purple{
+                score += 10
+            }else{
+                score = 0
+            }
+        }
+        
         
         getRandomCollorTop()
         getRandomCollorBottom()
         getRandomUICollor()
+        getRandomCardColor()
     }
     
     func yesWasClicked(){
-        if topColor == "Blue" && randomUIColor == Color.blue{
-            score += 10
-        } else if topColor == "Green" && randomUIColor == Color.green{
-            score += 10
-        } else if topColor == "Yellow" && randomUIColor == Color.yellow{
-            score += 10
-        } else if topColor == "Orange" && randomUIColor == Color.orange{
-            score += 10
-        } else if topColor == "Red" && randomUIColor == Color.red{
-            score += 10
-        } else if topColor == "Purple" && randomUIColor == Color.purple{
-            score += 10
-        }else{
-            score = 0
+        if cardColor == Color.white{
+            if topColor == "Blue" && randomUIColor == Color.blue{
+                score += 10
+            } else if topColor == "Green" && randomUIColor == Color.green{
+                score += 10
+            } else if topColor == "Yellow" && randomUIColor == Color.yellow{
+                score += 10
+            } else if topColor == "Orange" && randomUIColor == Color.orange{
+                score += 10
+            } else if topColor == "Red" && randomUIColor == Color.red{
+                score += 10
+            } else if topColor == "Purple" && randomUIColor == Color.purple{
+                score += 10
+            }else{
+                score = 0
+            }
         }
+        
+        if cardColor == Color.black{
+            if topColor == "Blue" && randomUIColor == Color.blue{
+                score = 0
+            } else if topColor == "Green" && randomUIColor == Color.green{
+                score = 0
+            } else if topColor == "Yellow" && randomUIColor == Color.yellow{
+                score = 0
+            } else if topColor == "Orange" && randomUIColor == Color.orange{
+                score = 0
+            } else if topColor == "Red" && randomUIColor == Color.red{
+                score = 0
+            } else if topColor == "Purple" && randomUIColor == Color.purple{
+                score = 0
+            }else{
+                score += 10
+            }
+        }
+        
         
         getRandomCollorTop()
         getRandomCollorBottom()
         getRandomUICollor()
+        getRandomCardColor()
     }
     
     func reset(){
@@ -175,8 +241,8 @@ struct ContentView: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Medium_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(topColor: "black", bottomColor: "red",randomUIColor: .green)
+        Medium(topColor: "black", bottomColor: "red", randomUIColor: .green, cardColor: .white)
     }
 }

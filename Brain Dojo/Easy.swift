@@ -57,18 +57,24 @@ struct Easy: View {
                     Text(topColor)
                         .font(.system(size: 45.0))
                         .tracking(5)
-                        .frame(width: 300, height: 100, alignment: .center)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: 1)
+                        .frame(width: 300, height: 100)
                         .background(Color.white.opacity(0.85))
-                        
+                        .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.black, lineWidth: 1)
+                        )
+                    
                     Text(bottomColor)
                         .font(.system(size: 45.0))
                         .tracking(5)
                         .fontWeight(.heavy)
                         .frame(width: 300, height: 100, alignment: .center)
-                        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
                         .background(Color.white.opacity(0.85))
                         .foregroundColor(randomUIColor)
+                        .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 15)
+                            .stroke(Color.black, lineWidth: 1)
+                        )
                 }
                 Spacer()
                 

@@ -9,6 +9,11 @@ import SwiftUI
 
 struct Background: View {
     var body: some View {
+        
+        Image("Background-2")
+            .resizable()
+            .edgesIgnoringSafeArea(.all)
+        
         Rectangle()
             .foregroundColor(Color(red: 200/255, green: 143/255, blue: 32/255))
             .edgesIgnoringSafeArea(.all)

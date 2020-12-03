@@ -14,6 +14,7 @@ struct Home: View {
                 Background()
                 
                 VStack(spacing: 30){
+                    Spacer()
                     Text("Select Difficulty")
                         .font(.system(size: 35.0))
                         .fontWeight(.light)
@@ -55,6 +56,20 @@ struct Home: View {
                                 .stroke(Color.black, lineWidth: 1)
                             )
                     }
+                    Spacer()
+                    
+                    NavigationLink(destination: DifficultyDetails()){
+                        Text("Difficulty Details")
+                            .font(.system(size: 20))
+                            .tracking(5)
+                            .frame(width: 300, height: 75, alignment: .center)
+                            //.background(Color.white.opacity(0.85))
+                            .cornerRadius(15)
+                            .overlay(RoundedRectangle(cornerRadius: 15)
+                                .stroke(Color.black, lineWidth: 1)
+                            )
+                            
+                    }.padding(.bottom, 30)
                 }
                 .navigationBarTitle("Brain Dojo")
                 

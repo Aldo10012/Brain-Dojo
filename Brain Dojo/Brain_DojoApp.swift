@@ -1,17 +1,17 @@
 //
-//  Brain_DojoApp.swift
+//  final_projectApp.swift
 //  Brain Dojo
 //
-//  Created by Alberto Dominguez on 11/22/20.
+//  Created by Alberto Dominguez on 11/20/20.
 //
 
 import SwiftUI
 
 @main
-struct Brain_DojoApp: App {
+struct final_projectApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(topColor: "black", bottomColor: "red",randomUIColor: .green)
         }
     }
 }

@@ -22,37 +22,13 @@ struct Home: View {
                         .multilineTextAlignment(.center)
                     
                     NavigationLink(destination: Easy(topColor: "black", bottomColor: "red",randomUIColor: .green)){
-                        Text("Easy")
-                            .font(.system(size: 35))
-                            .tracking(5)
-                            .frame(width: 300, height: 75, alignment: .center)
-                            .background(Color.white.opacity(0.85))
-                            .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.black, lineWidth: 1)
-                            )
+                        DifficultyCard(difficulty: "Easy")
                     }
                     NavigationLink(destination: Medium(topColor: "black", bottomColor: "red",randomUIColor: .green, cardColor: .white)){
-                        Text("Medium")
-                            .font(.system(size: 35))
-                            .tracking(5)
-                            .frame(width: 300, height: 75, alignment: .center)
-                            .background(Color.white.opacity(0.85))
-                            .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.black, lineWidth: 1)
-                            )
+                        DifficultyCard(difficulty: "Normal")
                     }
                     NavigationLink(destination: Hard(topColor: "black", bottomColor: "red",randomUIColor: .green, cardColor: .white)){
-                        Text("Hard")
-                            .font(.system(size: 35))
-                            .tracking(5)
-                            .frame(width: 300, height: 75, alignment: .center)
-                            .background(Color.white.opacity(0.85))
-                            .cornerRadius(15)
-                            .overlay(RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.black, lineWidth: 1)
-                            )
+                        DifficultyCard(difficulty: "Hard")
                     }
                     Spacer()
                     

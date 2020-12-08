@@ -67,11 +67,11 @@
 				63F9AF1C2578A977000801DF /* Easy.swift */,
 				63F9AF202578A987000801DF /* Medium.swift */,
 				63F9AF242578A99C000801DF /* Hard.swift */,
+				638FB58325798A60000555CE /* DifficultyDetails.swift */,
 				63209E8C25781D97009028A5 /* Background.swift */,
 				63BC07AD256B8F3600C95FCA /* Assets.xcassets */,
 				63BC07B2256B8F3600C95FCA /* Info.plist */,
 				63BC07AF256B8F3600C95FCA /* Preview Content */,
-				638FB58325798A60000555CE /* DifficultyDetails.swift */,
 			);
 			path = "Brain Dojo";
 			sourceTree = "<group>";

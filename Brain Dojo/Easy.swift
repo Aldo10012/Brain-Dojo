@@ -37,11 +37,10 @@ struct Easy: View {
                     
                     Text("Time: \(seconds)").onReceive(timer) {input in
                         self.seconds -= 1
-                        if seconds < 0 {seconds = 0}
+                        if seconds < 0 { seconds = 0 }
                     }.font(.system(size: 20.0))
                     
                     Text("Score: \(score)").font(.system(size: 20.0))
-                    
                 }
                 
                 Spacer()

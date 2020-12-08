@@ -31,8 +31,6 @@ struct Home: View {
                             .overlay(RoundedRectangle(cornerRadius: 15)
                                 .stroke(Color.black, lineWidth: 1)
                             )
-                            
-                            
                     }
                     NavigationLink(destination: Medium(topColor: "black", bottomColor: "red",randomUIColor: .green, cardColor: .white)){
                         Text("Medium")

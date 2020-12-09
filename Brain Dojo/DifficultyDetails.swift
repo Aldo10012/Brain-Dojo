@@ -13,32 +13,10 @@ struct DifficultyDetails: View {
             Background()
             
             VStack(){
-                HStack(spacing:30){
-                    VStack(){
-                        Text("EASY")
-                        Text("1")
-                    }.frame(width: 75, height: 60, alignment: .center)
-                    .overlay(RoundedRectangle(cornerRadius: 15)
-                    .stroke(Color.black, lineWidth: 1)
-                                                                            )
-                    
-                    VStack(){
-                        Text("Meduim")
-                        Text("1-2")
-                    }.frame(width: 75, height: 60, alignment: .center)//.background(Color.white.opacity(0.85))
-                    .cornerRadius(15)
-                    .overlay(RoundedRectangle(cornerRadius: 15)
-                        .stroke(Color.black, lineWidth: 1)
-                    )
-                    
-                    VStack(){
-                        Text("Hard")
-                        Text("1-3")
-                    }.frame(width: 75, height: 60, alignment: .center)//.background(Color.white.opacity(0.85))
-                        .cornerRadius(15)
-                        .overlay(RoundedRectangle(cornerRadius: 15)
-                            .stroke(Color.black, lineWidth: 1)
-                        )
+                HStack(spacing:30){                    
+                    DificultyFollowTheseRules(difficulty: "Easy", followsRules: "1")
+                    DificultyFollowTheseRules(difficulty: "Normal", followsRules: "1-2")
+                    DificultyFollowTheseRules(difficulty: "Hard", followsRules: "1-3")
                 }
                 Spacer()
                 Text("Rules to follow")
@@ -48,35 +26,11 @@ struct DifficultyDetails: View {
                 
                 
                 VStack(){
-                    HStack(alignment: .center){
-                        Text("1")
-                            .padding(25)
-                        Text("Top card text must match the bottom card text color")
-                            .tracking(3)
-                        
-                    }.padding(.bottom, 25).font(.system(size: 25))
-                    
-                    HStack(alignment: .center){
-                        Text("2")
-                            .padding(25)
-                        Text("Black cards = white card's opposite answer")
-                            .tracking(2)
-                        
-                    }.padding(.bottom, 25).font(.system(size: 25))
-                    
-                    HStack(alignment: .center){
-                        Text("3")
-                            .padding(25)
-                        Text("Green cards = yes, red cards = no")
-                            .tracking(3)
-                        
-                    }.padding(.bottom, 25).font(.system(size: 25))
-                    
+                    Rules(ruleNumber: 1, rule: "Top card text must match the bottom card text color")
+                    Rules(ruleNumber: 2, rule: "Black cards = white card's opposite answer")
+                    Rules(ruleNumber: 3, rule: "Green cards = yes, red cards = no")
                 }.padding(20)
                 Spacer()
-                
-                
-                
                 
             }
         }

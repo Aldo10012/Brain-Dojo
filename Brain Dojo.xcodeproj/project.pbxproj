@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		63209E8D25781D97009028A5 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63209E8C25781D97009028A5 /* Background.swift */; };
+		63634E5025808CDB0074E272 /* Rules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63634E4F25808CDB0074E272 /* Rules.swift */; };
+		63634E5425808F970074E272 /* DificultyFollowTheseRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63634E5325808F970074E272 /* DificultyFollowTheseRules.swift */; };
 		638FB58425798A60000555CE /* DifficultyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FB58325798A60000555CE /* DifficultyDetails.swift */; };
 		63A1B36F2580147600B57B1E /* DifficultyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A1B36E2580147600B57B1E /* DifficultyCard.swift */; };
 		63BC07AA256B8F3600C95FCA /* Brain_DojoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63BC07A9256B8F3600C95FCA /* Brain_DojoApp.swift */; };
@@ -21,6 +23,8 @@
 
 /* Begin PBXFileReference section */
 		63209E8C25781D97009028A5 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		63634E4F25808CDB0074E272 /* Rules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rules.swift; sourceTree = "<group>"; };
+		63634E5325808F970074E272 /* DificultyFollowTheseRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DificultyFollowTheseRules.swift; sourceTree = "<group>"; };
 		638FB58325798A60000555CE /* DifficultyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyDetails.swift; sourceTree = "<group>"; };
 		63A1B36E2580147600B57B1E /* DifficultyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyCard.swift; sourceTree = "<group>"; };
 		63BC07A6256B8F3600C95FCA /* Brain Dojo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brain Dojo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,10 +75,12 @@
 				63F9AF242578A99C000801DF /* Hard.swift */,
 				638FB58325798A60000555CE /* DifficultyDetails.swift */,
 				63209E8C25781D97009028A5 /* Background.swift */,
+				63A1B36E2580147600B57B1E /* DifficultyCard.swift */,
+				63634E4F25808CDB0074E272 /* Rules.swift */,
+				63634E5325808F970074E272 /* DificultyFollowTheseRules.swift */,
 				63BC07AD256B8F3600C95FCA /* Assets.xcassets */,
 				63BC07B2256B8F3600C95FCA /* Info.plist */,
 				63BC07AF256B8F3600C95FCA /* Preview Content */,
-				63A1B36E2580147600B57B1E /* DifficultyCard.swift */,
 			);
 			path = "Brain Dojo";
 			sourceTree = "<group>";
@@ -158,7 +164,9 @@
 			files = (
 				63F9AF212578A987000801DF /* Medium.swift in Sources */,
 				63F9AF1D2578A977000801DF /* Easy.swift in Sources */,
+				63634E5025808CDB0074E272 /* Rules.swift in Sources */,
 				638FB58425798A60000555CE /* DifficultyDetails.swift in Sources */,
+				63634E5425808F970074E272 /* DificultyFollowTheseRules.swift in Sources */,
 				63BC07AA256B8F3600C95FCA /* Brain_DojoApp.swift in Sources */,
 				63A1B36F2580147600B57B1E /* DifficultyCard.swift in Sources */,
 				63F9AF1A2578A957000801DF /* Home.swift in Sources */,
